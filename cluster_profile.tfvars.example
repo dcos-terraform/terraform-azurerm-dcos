@@ -1,0 +1,22 @@
+name_prefix = "mbernadin"
+dcos_cluster_name = "Prod Cluster"
+infra_disk_type = "pd-ssd" # Optional
+infra_disk_size = "128"
+infra_machine_type = "f1-micro"
+infra_ssh_user = "core"
+infra_dcos_instance_os = "coreos_1576.5.0"
+infra_public_ssh_key_path = "~/.ssh/key.pub"
+billing_account = "002609-0361C2-BB09D2"
+# org_id = "998989278031"
+project_id = "massive-bliss-781"
+region = "us-west1"
+credentials_path_json = "~/.gcp/demo-bliss-f23c196ae1c5.json"
+dcos_version = "1.11.4"
+
+####
+####
+
+num_masters = "3"
+num_private_agents = "1"
+num_public_agents = "1"
+dcos_type = "open"
