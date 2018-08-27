@@ -1,9 +1,8 @@
 provider "google" {}
 
 module "dcos-infrastructure" {
-  source = "../terraform-gcp-infrastructure"
-
-  # version = "~> 0.0"
+  source  = "dcos-terraform/infrastructure/gcp"
+  version = "~> 0.0"
 
   name_prefix               = "${var.name_prefix}"
   infra_disk_type           = "${var.infra_disk_type}"
