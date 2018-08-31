@@ -20,6 +20,8 @@ module "dcos-infrastructure" {
   num_masters               = "${var.num_masters}"
   num_private_agents        = "${var.num_private_agents}"
   num_public_agents         = "${var.num_public_agents}"
+  master_cidr_range         = "${var.master_cidr_range}"
+  agent_cidr_range          = "${var.agent_cidr_range}"
 
   # org_id = "998989278031"
 

@@ -192,4 +192,3 @@ output "dcos-infrastructure.bootstrap.dcos_instance_os" {
 output "dcos-infrastructure.dcos_version" {
   value = "${var.dcos_version}"
 }
-

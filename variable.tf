@@ -20,6 +20,16 @@ variable "project_id" {
   default = ""
 }
 
+# Master CIDR Range
+variable "master_cidr_range" {
+  default = "10.64.0.0/16"
+}
+
+# Agent CIDR Range
+variable "agent_cidr_range" {
+  default = "10.65.0.0/16"
+}
+
 # GCP Credentials JSON
 variable "credentials_path_json" {}
 
