@@ -19,8 +19,8 @@ output "dcos-infrastructure.bootstrap.disk_type" {
 }
 
 # Deployed bootstrap machine type
-output "dcos-infrastructure.bootstrap.machine_type" {
-  value = "${module.dcos-infrastructure.bootstrap.machine_type}"
+output "dcos-infrastructure.bootstrap.instance_type" {
+  value = "${module.dcos-infrastructure.bootstrap.instance_type}"
 }
 
 # Deployed bootstrap image
@@ -29,8 +29,8 @@ output "dcos-infrastructure.bootstrap.image" {
 }
 
 # Deployed bootstrap agent SSH user
-output "dcos-infrastructure.bootstrap.ssh_user" {
-  value = "${module.dcos-infrastructure.bootstrap.ssh_user}"
+output "dcos-infrastructure.bootstrap.admin_username" {
+  value = "${module.dcos-infrastructure.bootstrap.admin_username}"
 }
 
 # Number of Masters
@@ -49,8 +49,8 @@ output "dcos-infrastructure.masters.disk_type" {
 }
 
 # Deployed master machine type
-output "dcos-infrastructure.masters.machine_type" {
-  value = "${module.dcos-infrastructure.masters.machine_type}"
+output "dcos-infrastructure.masters.instance_type" {
+  value = "${module.dcos-infrastructure.masters.instance_type}"
 }
 
 # Deployed master image
@@ -59,8 +59,8 @@ output "dcos-infrastructure.masters.image" {
 }
 
 # Deployed masters agent SSH user
-output "dcos-infrastructure.masters.ssh_user" {
-  value = "${module.dcos-infrastructure.masters.ssh_user}"
+output "dcos-infrastructure.masters.admin_username" {
+  value = "${module.dcos-infrastructure.masters.admin_username}"
 }
 
 # Number of private agents
@@ -79,8 +79,8 @@ output "dcos-infrastructure.private_agents.disk_type" {
 }
 
 # Deployed private agent machine type
-output "dcos-infrastructure.private_agents.machine_type" {
-  value = "${module.dcos-infrastructure.private_agents.machine_type}"
+output "dcos-infrastructure.private_agents.instance_type" {
+  value = "${module.dcos-infrastructure.private_agents.instance_type}"
 }
 
 # Deployed private agent image
@@ -89,8 +89,8 @@ output "dcos-infrastructure.private_agents.image" {
 }
 
 # Deployed private agent SSH user
-output "dcos-infrastructure.private_agents.ssh_user" {
-  value = "${module.dcos-infrastructure.private_agents.ssh_user}"
+output "dcos-infrastructure.private_agents.admin_username" {
+  value = "${module.dcos-infrastructure.private_agents.admin_username}"
 }
 
 # Number of public agents
@@ -109,8 +109,8 @@ output "dcos-infrastructure.public_agents.disk_type" {
 }
 
 # Deployed public agent machine type
-output "dcos-infrastructure.public_agents.machine_type" {
-  value = "${module.dcos-infrastructure.public_agents.machine_type}"
+output "dcos-infrastructure.public_agents.instance_type" {
+  value = "${module.dcos-infrastructure.public_agents.instance_type}"
 }
 
 # provided public agent OS image
@@ -119,13 +119,13 @@ output "dcos-infrastructure.public_agents.image" {
 }
 
 # Deployed public agent SSH user
-output "dcos-infrastructure.public_agents.ssh_user" {
-  value = "${module.dcos-infrastructure.public_agents.ssh_user}"
+output "dcos-infrastructure.public_agents.admin_username" {
+  value = "${module.dcos-infrastructure.public_agents.admin_username}"
 }
 
-# GCP Region
-output "dcos-infrastructure.region" {
-  value = "${var.region}"
+# Azure Region
+output "dcos-infrastructure.location" {
+  value = "${var.location}"
 }
 
 # Bootstrap private ip

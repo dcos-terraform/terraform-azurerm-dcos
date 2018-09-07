@@ -1,5 +1,4 @@
 #!/bin/sh
-# Example ip-detect script using an external authority
-# Uses the GCP Metadata Service to get the node's internal
-# ipv4 address
-curl -fsSL http://169.254.169.254/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip -H 'Metadata-Flavor: Google'
+set -o nounset -o errexit
+
+curl -H Metadata:true -fsSL "http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2017-04-02&format=text"

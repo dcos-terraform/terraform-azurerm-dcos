@@ -5,46 +5,28 @@
 #
 variable "name_prefix" {}
 
-# GCP Builing Account
-variable "billing_account" {
-  default = ""
-}
-
-# GCP Org ID
-variable "org_id" {
-  default = ""
-}
-
-# Existing Project ID
-variable "project_id" {
-  default = ""
-}
-
 # Master CIDR Range
-variable "master_cidr_range" {
-  default = "10.64.0.0/16"
+variable "public_cidr" {
+  default = "10.32.0.0/22"
 }
 
 # Agent CIDR Range
-variable "agent_cidr_range" {
-  default = "10.65.0.0/16"
+variable "private_cidr" {
+  default = "10.32.4.0/22"
 }
-
-# GCP Credentials JSON
-variable "credentials_path_json" {}
 
 # Bootstrap node disk size (gb)
 variable "bootstrap_disk_size" {
   default = ""
 }
 
-# Bootstrap node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard".
+# Bootstrap node disk type. 
 variable "bootstrap_disk_type" {
   default = ""
 }
 
 # Bootstrap node machine type
-variable "bootstrap_machine_type" {
+variable "bootstrap_instance_type" {
   default = ""
 }
 
@@ -58,13 +40,13 @@ variable "master_disk_size" {
   default = ""
 }
 
-# Master node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard".
+# Master node disk type. 
 variable "master_disk_type" {
   default = ""
 }
 
 # Master node machine type
-variable "master_machine_type" {
+variable "master_instance_type" {
   default = ""
 }
 
@@ -78,13 +60,13 @@ variable "private_agent_disk_size" {
   default = ""
 }
 
-# Private agent node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard".
+# Private agent node disk type. 
 variable "private_agent_disk_type" {
   default = ""
 }
 
 # Private agent node machine type
-variable "private_agent_machine_type" {
+variable "private_agent_instance_type" {
   default = ""
 }
 
@@ -98,13 +80,13 @@ variable "public_agent_disk_size" {
   default = ""
 }
 
-# Public agent node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard".
+# Public agent node disk type. 
 variable "public_agent_disk_type" {
   default = ""
 }
 
 # Public agent machine type
-variable "public_agent_machine_type" {
+variable "public_agent_instance_type" {
   default = ""
 }
 
@@ -133,33 +115,33 @@ variable "bootstrap_public_ssh_key_path" {
   default = ""
 }
 
-# GCP Region
-variable "region" {
+# Azure Region
+variable "location" {
   default = ""
 }
 
 # Master node SSH User
-variable "master_ssh_user" {
+variable "master_admin_username" {
   default = ""
 }
 
 # Bootstrap node SSH User
-variable "bootstrap_ssh_user" {
+variable "bootstrap_admin_username" {
   default = ""
 }
 
 # Public Agent node SSH User
-variable "public_agent_ssh_user" {
+variable "public_agent_admin_username" {
   default = ""
 }
 
 # Private Agent ndoe SSH User
-variable "private_agent_ssh_user" {
+variable "private_agent_admin_username" {
   default = ""
 }
 
 # Global Infra SSH User
-variable "infra_ssh_user" {
+variable "infra_admin_username" {
   default = ""
 }
 
@@ -170,17 +152,17 @@ variable "infra_public_ssh_key_path" {
 
 # Global Infra Disk Type
 variable "infra_disk_type" {
-  default = ""
+  default = "Standard_LRS"
 }
 
 # Global Infra Disk Size
 variable "infra_disk_size" {
-  default = ""
+  default = "128"
 }
 
 # Global Infra Machine Type
-variable "infra_machine_type" {
-  default = ""
+variable "infra_instance_type" {
+  default = "Standard_DS11_v2"
 }
 
 # Global Infra Tested OSes Image
@@ -215,7 +197,7 @@ variable "bootstrap_dcos_instance_os" {
 
 # Number of Masters
 variable "num_masters" {
-  default = "1"
+  default = "3"
 }
 
 # Number of Private Agents

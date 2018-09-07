@@ -1,32 +1,27 @@
-provider "google" {}
+provider "azurerm" {}
 
 module "dcos-infrastructure" {
-  source  = "dcos-terraform/infrastructure/gcp"
+  source  = "dcos-terraform/infrastructure/azurerm"
   version = "~> 0.0"
 
   name_prefix               = "${var.name_prefix}"
   infra_disk_type           = "${var.infra_disk_type}"
   infra_disk_size           = "${var.infra_disk_size}"
-  infra_machine_type        = "${var.infra_machine_type}"
-  infra_ssh_user            = "${var.infra_ssh_user}"
+  infra_instance_type        = "${var.infra_instance_type}"
+  infra_admin_username            = "${var.infra_admin_username}"
   infra_dcos_instance_os    = "${var.infra_dcos_instance_os}"
   infra_public_ssh_key_path = "${var.infra_public_ssh_key_path}"
   dcos_version              = "${var.dcos_version}"
-  billing_account           = "${var.billing_account}"
-  project_id                = "${var.project_id}"
-  region                    = "${var.region}"
-  credentials_path_json     = "${var.credentials_path_json}"
+  location                    = "${var.location}"
   dcos_version              = "${var.dcos_version}"
   num_masters               = "${var.num_masters}"
   num_private_agents        = "${var.num_private_agents}"
   num_public_agents         = "${var.num_public_agents}"
-  master_cidr_range         = "${var.master_cidr_range}"
-  agent_cidr_range          = "${var.agent_cidr_range}"
-
-  # org_id = "998989278031"
+  public_cidr         = "${var.public_cidr}"
+  private_cidr          = "${var.private_cidr}"
 
   providers = {
-    aws = "google"
+    azurerm = "azurerm"
   }
 }
 
@@ -42,22 +37,22 @@ module "dcos-core" {
   # bootstrap
   bootstrap_ip         = "${module.dcos-infrastructure.bootstrap.public_ip[0]}"
   bootstrap_private_ip = "${module.dcos-infrastructure.bootstrap.private_ip[0]}"
-  bootstrap_os_user    = "${module.dcos-infrastructure.bootstrap.ssh_user}"
+  bootstrap_os_user    = "${module.dcos-infrastructure.bootstrap.admin_username}"
 
   # master
   master_ips         = ["${module.dcos-infrastructure.masters.public_ips}"]
   master_private_ips = ["${module.dcos-infrastructure.masters.private_ips}"]
-  masters_os_user    = "${module.dcos-infrastructure.masters.ssh_user}"
+  masters_os_user    = "${module.dcos-infrastructure.masters.admin_username}"
   num_masters        = "${var.num_masters}"
 
   # private agent
   private_agent_ips      = ["${module.dcos-infrastructure.private_agents.public_ips}"]
-  private_agents_os_user = "${module.dcos-infrastructure.private_agents.ssh_user}"
+  private_agents_os_user = "${module.dcos-infrastructure.private_agents.admin_username}"
   num_private_agents     = "${var.num_private_agents}"
 
   # public agent
   public_agent_ips      = ["${module.dcos-infrastructure.public_agents.public_ips}"]
-  public_agents_os_user = "${module.dcos-infrastructure.public_agents.ssh_user}"
+  public_agents_os_user = "${module.dcos-infrastructure.public_agents.admin_username}"
   num_public_agents     = "${var.num_public_agents}"
 
   # DC/OS options
