@@ -19,7 +19,7 @@ module "dcos-infrastructure" {
   num_public_agents         = "${var.num_public_agents}"
   public_cidr         = "${var.public_cidr}"
   private_cidr          = "${var.private_cidr}"
-
+  tags = "${var.tags}"
   providers = {
     azurerm = "azurerm"
   }
