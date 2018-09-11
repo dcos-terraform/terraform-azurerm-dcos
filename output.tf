@@ -185,7 +185,7 @@ output "dcos-infrastructure.public_agents.dcos_instance_os" {
 
 # Public Agent Load Balancer Address
 output "dcos-infrastructure.public_agents.lb.fqdn" {
-  value = "${module.public_agents.lb.fqdn}"
+  value = "${module.dcos-infrastructure.public_agents.lb.fqdn}"
 }
 
 # Private agent node tested OSes image
