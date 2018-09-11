@@ -173,9 +173,19 @@ output "dcos-infrastructure.masters.dcos_instance_os" {
   value = "${module.dcos-infrastructure.masters.dcos_instance_os}"
 }
 
+# Master Load Balancer Address
+output "dcos-infrastructure.masters.lb.fqdn" {
+  value = "${module.dcos-infrastructure.masters.lb.fqdn}"
+}
+
 # Public Agent node tested OSes image
 output "dcos-infrastructure.public_agents.dcos_instance_os" {
   value = "${module.dcos-infrastructure.public_agents.dcos_instance_os}"
+}
+
+# Public Agent Load Balancer Address
+output "dcos-infrastructure.public_agents.lb.fqdn" {
+  value = "${module.public_agents.lb.fqdn}"
 }
 
 # Private agent node tested OSes image
