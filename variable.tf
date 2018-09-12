@@ -117,7 +117,7 @@ variable "bootstrap_public_ssh_key_path" {
 
 # Azure Region
 variable "location" {
-  default = ""
+  default = "West US"
 }
 
 # Master node SSH User
