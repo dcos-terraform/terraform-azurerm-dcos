@@ -21,7 +21,7 @@ echo "dcos_version=\"1.10.8\"" >> cluster.tfvars
 # paste your license key here
 echo "dcos_license_key_contents=\"abcdef123456\"" >> cluster.tfvars
 # we can set the azure location
-echo "locaation=\"West US\"" >> cluster.tfvars
+echo "location=\"West US\"" >> cluster.tfvars
 ```
 
 ## admin_ips (optional)

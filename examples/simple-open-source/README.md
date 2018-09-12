@@ -19,7 +19,7 @@ echo "tags={Owner = \"$(whoami)\", Expires = \"2h\"}" >> cluster.tfvars
 # we have to explicitly set the version.
 echo "dcos_version=\"1.10.8\"" >> cluster.tfvars
 # we can set the azure location
-echo "locaation=\"West US\"" >> cluster.tfvars
+echo "location=\"West US\"" >> cluster.tfvars
 ```
 
 ## admin_ips (optional)

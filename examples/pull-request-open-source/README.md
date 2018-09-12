@@ -19,7 +19,7 @@ echo "tags={Owner = \"$(whoami)\", Expires = \"2h\"}" >> cluster.tfvars
 # we have to explicitly set the version.
 echo "dcos_version=\"1.10.8\"" >> cluster.tfvars
 # we can set the azure location
-echo "locaation=\"West US\"" >> cluster.tfvars
+echo "location=\"West US\"" >> cluster.tfvars
 # now we habe to provider the link to dcos_generate_config.sh
 echo "custom_dcos_download_path=\"https://downloads.dcos.io/dcos/testing/pull/3303/dcos_generate_config.sh\""
 ```
