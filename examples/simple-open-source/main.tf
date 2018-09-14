@@ -1,6 +1,6 @@
 variable "location" {
   description = "Azure location (region) of the DC/OS cluster"
-  default = "West US"
+  default     = "West US"
 }
 
 variable "name_prefix" {
