@@ -73,7 +73,7 @@ We expect your aws environment is properly setup. Check it with issuing `aws sts
 
 We now create the terraform plan which gets applied later on.
 ```bash
-$ terraform plan --var-file cluster.tfvars -out=cluster.plan
+$ terraform plan -var-file cluster.tfvars -out=cluster.plan
 ```
 
 # terraform apply
@@ -99,7 +99,7 @@ Terraform v0.11.8
 Now we're applying our plan
 
 ```bash
-$ terraform plan --var-file cluster.tfvars 
+$ terraform plan -var-file cluster.tfvars 
 ```
 
 in the output section you will find the hostname of your cluster. With this hostname you'll be able to access the cluster.
@@ -108,5 +108,5 @@ in the output section you will find the hostname of your cluster. With this host
 If you want to destroy your cluster again use
 
 ```bash
-$ terraform destroy --var-file cluster.tfvars
+$ terraform destroy -var-file cluster.tfvars
 ```
