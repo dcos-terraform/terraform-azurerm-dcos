@@ -242,6 +242,11 @@ variable "tags" {
   default = {}
 }
 
+# DCOS install or upgrade mode
+variable "dcos_install_mode" {
+  default = "install"
+}
+
 # DCOS cluster name
 variable "dcos_cluster_name" {
   description = "Name of the DC/OS cluster"

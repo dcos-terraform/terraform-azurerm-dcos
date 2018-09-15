@@ -61,7 +61,7 @@ module "dcos-core" {
   num_public_agents       = "${var.num_public_agents}"
 
   # DC/OS options
-  dcos_install_mode         = "install"
+  dcos_install_mode         = "${var.dcos_install_mode}"
   dcos_cluster_name         = "${var.dcos_cluster_name}"
   dcos_version              = "${var.dcos_version}"
   custom_dcos_download_path = "${var.custom_dcos_download_path}"
