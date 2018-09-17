@@ -33,11 +33,6 @@ module "dcos-infrastructure" {
   }
 }
 
-/////////////////////////////////////////
-/////////////////////////////////////////
-/////////////////////////////////////////
-/////////////////////////////////////////
-
 module "dcos-core" {
   source  = "dcos-terraform/dcos-install-remote-exec/null"
   version = "~> 0.0"
@@ -79,6 +74,10 @@ module "dcos-core" {
   dcos_exhibitor_storage_backend = "static"
 }
 ```
+
+## Deploy DC/OS on Azure using Terraform
+
+Get started with using this module by reading the documentation here: [README.md](./docs/README.md)
 
 ## Inputs
 

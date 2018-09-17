@@ -1,0 +1,14 @@
+# Destroy Cluster
+
+You can shutdown/destroy all resources from your environment by running this command below:
+
+```bash
+terraform destroy -var-file cluster_profile.tfvars
+```
+
+## Documentation
+
+1. [Deploying on Azure](./INSTALL.md)
+2. [Upgrading DC/OS](./UPGRADE.md)
+3. [Maintaining Nodes](./MAINTAIN.md)
+4. Destroy
