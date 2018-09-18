@@ -70,7 +70,7 @@ module "dcos-core" {
   dcos_ip_detect_contents           = "${file("${path.module}/scripts/ip-detect.sh")}"
   dcos_fault_domain_detect_contents = "${file("${path.module}/scripts/fault-domain-detect.sh")}"
 
-  dcos_type                      = "${var.dcos_type}"
+  dcos_variant                   = "${var.dcos_variant}"
   dcos_license_key_contents      = "${var.dcos_license_key_contents}"
   dcos_master_discovery          = "static"
   dcos_exhibitor_storage_backend = "static"

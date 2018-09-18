@@ -68,7 +68,7 @@ module "dcos-core" {
   dcos_ip_detect_contents           = "${file("${path.module}/scripts/ip-detect.sh")}"
   dcos_fault_domain_detect_contents = "${file("${path.module}/scripts/fault-domain-detect.sh")}"
 
-  dcos_type                      = "${var.dcos_type}"
+  dcos_variant                      = "${var.dcos_variant}"
   dcos_license_key_contents      = "${var.dcos_license_key_contents}"
   dcos_master_discovery          = "static"
   dcos_exhibitor_storage_backend = "static"
@@ -93,7 +93,7 @@ Get started with using this module by reading the documentation here: [README.md
 | custom_dcos_download_path | insert location of dcos installer script (optional) | string | `` | no |
 | dcos_cluster_name | Name of the DC/OS cluster | string | `dcos-example` | no |
 | dcos_license_key_contents | [Enterprise DC/OS] used to privide the license key of DC/OS for Enterprise Edition. Optional if license.txt is present on bootstrap node. | string | `` | no |
-| dcos_type | DCOS type: 'ee' or 'open' | string | `open` | no |
+| dcos_variant | DCOS type: 'ee' or 'open' | string | `open` | no |
 | dcos_version | DCOS Version | string | `1.11.4` | no |
 | infra_admin_username | Global Infra SSH User | string | `` | no |
 | infra_dcos_instance_os | Global Infra Tested OSes Image | string | `` | no |

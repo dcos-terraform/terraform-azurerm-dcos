@@ -32,8 +32,8 @@ module "dcos" {
   num_private_agents = "2"
   num_public_agents  = "1"
 
-  dcos_type = "open"
-  location  = "${var.location}"
+  dcos_variant = "open"
+  location     = "${var.location}"
 }
 
 output "cluster-address" {

@@ -232,7 +232,7 @@ variable "custom_dcos_download_path" {
 }
 
 # DCOS type: 'ee' or 'open'
-variable "dcos_type" {
+variable "dcos_variant" {
   default = "open"
 }
 
