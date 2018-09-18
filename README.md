@@ -4,7 +4,7 @@ Convenience wrapper for Azure
 
 ## Deploy DC/OS on Azure using Terraform
 
-Get started with using this module by reading the documentation here: [README.md](https://github.com/dcos-terraform/terraform-azurerm-dcos/tree/master/docs)
+Get started with using this module by reading the documentation here: [README.md](https://github.com/dcos-terraform/terraform-azurerm-dcos/tree/master/docs/README.md)
 
 ## Usage
 
