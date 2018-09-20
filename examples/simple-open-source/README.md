@@ -15,7 +15,7 @@ echo "public_ssh_key_path=\"~/.ssh/id_rsa.pub\"" >> cluster.tfvars
 # lets set the clustername
 echo "name_prefix=\"my-ee-cluster\"" >> cluster.tfvars
 # we at mesosphere have to tag our instances with an owner and an expire date.
-echo "tags={Owner = \"$(whoami)\", Expires = \"2h\"}" >> cluster.tfvars
+echo "tags={owner = \"$(whoami)\", expiration = \"2h\"}" >> cluster.tfvars
 # we have to explicitly set the version.
 echo "dcos_version=\"1.10.8\"" >> cluster.tfvars
 # we can set the azure location
