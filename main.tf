@@ -1,3 +1,33 @@
+/**
+ * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-dcos/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-dcos/job/master/)
+ * # terraform azurerm dcos
+ *
+ * Convenience wrapper for Azure
+ *
+ * ## Deploy DC/OS on Azure using Terraform
+ *
+ * Get started with using this module by reading the documentation here: [README.md](https://github.com/dcos-terraform/terraform-azurerm-dcos/tree/master/docs/README.md)
+ *
+ * ## Usage
+ *
+ *```hcl
+ * module "dcos" {
+ *   source  = "dcos-terraform/dcos/azurerm"
+ *   version = "~> 0.1"
+ *
+ *   cluster_name = "mydcoscluster"
+ *   infra_public_ssh_key_path = "~/.ssh/key.pub"
+ *
+ *   num_masters = "3"
+ *   num_private_agents = "2"
+ *   num_public_agents = "1"
+ *
+ *   dcos_variant = "open"
+ *   # dcos_license_key_contents = ""
+ * }
+ *```
+ */
+
 provider "azurerm" {}
 
 module "dcos-infrastructure" {
