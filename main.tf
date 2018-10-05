@@ -34,10 +34,9 @@ module "dcos-infrastructure" {
   source  = "dcos-terraform/infrastructure/azurerm"
   version = "~> 0.0"
 
-  name_prefix = "${var.cluster_name}"
-
-  infra_dcos_instance_os    = "${var.dcos_instance_os}"
-  infra_public_ssh_key_path = "${var.ssh_public_key_file}"
+  cluster_name           = "${var.cluster_name}"
+  infra_dcos_instance_os = "${var.dcos_instance_os}"
+  ssh_public_key_file    = "${var.ssh_public_key_file}"
 
   bootstrap_image            = "${var.bootstrap_gcp_image}"
   bootstrap_instance_type    = "${var.bootstrap_instance_type}"
@@ -63,7 +62,12 @@ module "dcos-infrastructure" {
   public_agent_disk_size        = "${var.private_agents_root_volume_size}"
   public_agent_disk_type        = "${var.private_agents_root_volume_type}"
 
-  location     = "${var.azure_location}"
+  num_masters        = "${var.num_masters}"
+  num_private_agents = "${var.num_private_agents}"
+  num_public_agents  = "${var.num_public_agents}"
+  admin_ips          = "${var.admin_ips}"
+
+  location     = "${var.location}"
   tags         = "${var.tags}"
   dcos_version = "${var.dcos_version}"
 
@@ -170,7 +174,7 @@ module "dcos-core" {
   dcos_log_directory                           = "${var.dcos_log_directory}"
   dcos_master_discovery                        = "${var.dcos_master_discovery}"
   dcos_master_dns_bindall                      = "${var.dcos_master_dns_bindall}"
-  dcos_master_external_loadbalancer            = "${var.dcos_master_external_loadbalancer}"
+  dcos_master_external_loadbalancer            = "${coalesce(var.dcos_master_external_loadbalancer,module.dcos-infrastructure.lb.masters)}"
   dcos_master_list                             = "${var.dcos_master_list}"
   dcos_mesos_container_log_sink                = "${var.dcos_mesos_container_log_sink}"
   dcos_mesos_dns_set_truncate_bit              = "${var.dcos_mesos_dns_set_truncate_bit}"

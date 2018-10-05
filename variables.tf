@@ -13,7 +13,7 @@ variable "ssh_public_key_file" {
   description = "Path to SSH public key. This is mandatory but can be set to an empty string if you want to use ssh_public_key with the key as string."
 }
 
-variable "azure_location" {
+variable "location" {
   description = "Azure location to be used"
 }
 

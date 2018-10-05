@@ -33,7 +33,6 @@ module "dcos" {
 |------|-------------|:----:|:-----:|:-----:|
 | admin_ips | List of CIDR admin IPs | string | `<list>` | no |
 | availability_zones | Availability zones to be used | list | `<list>` | no |
-| azure_location | Azure location to be used | string | - | yes |
 | bootstrap_gcp_image | [BOOTSTRAP] Image to be used | string | `` | no |
 | bootstrap_instance_type | [BOOTSTRAP] Machine type | string | `Standard_B2s` | no |
 | bootstrap_os | [BOOTSTRAP] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
@@ -140,6 +139,7 @@ module "dcos" {
 | dcos_zk_agent_credentials | [Enterprise DC/OS] set the ZooKeeper agent credentials (recommended) | string | `` | no |
 | dcos_zk_master_credentials | [Enterprise DC/OS] set the ZooKeeper master credentials (recommended) | string | `` | no |
 | dcos_zk_super_credentials | [Enterprise DC/OS] set the zk super credentials (recommended) | string | `` | no |
+| location | Azure location to be used | string | - | yes |
 | masters_gcp_image | [MASTERS] Image to be used | string | `` | no |
 | masters_instance_type | [MASTERS] Machine type | string | `Standard_D4s_v3` | no |
 | masters_os | [MASTERS] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
