@@ -6,7 +6,7 @@
  *
  * ## Deploy DC/OS on Azure using Terraform
  *
- * [Quick Start Guide](https://github.com/dcos-terraform/terraform-aws-dcos/blob/master/docs/quickstart/README.md)
+ * [Quick Start Guide](https://github.com/dcos-terraform/terraform-azurerm-dcos/blob/master/docs/quickstart/README.md)
  *
  * Get started with using this module by reading the documentation here: [README.md](https://github.com/dcos-terraform/terraform-azurerm-dcos/tree/master/docs/README.md)
  *
