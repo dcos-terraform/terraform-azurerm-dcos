@@ -204,11 +204,17 @@ variable "dcos_install_mode" {
   default = "install"
 }
 
+data "http" "whatismyip" {
+  url = "http://whatismyip.akamai.com/"
+}
+
 module "dcos" {
   source = "dcos-terraform/dcos/azurerm"
 
   cluster_name        = "my-open-dcos"
   ssh_public_key_file = "~/.ssh/id_rsa.pub"
+  admin_ips           = ["${data.http.whatismyip.body}/32"]
+  location            = "West US"
 
   num_masters        = "1"
   num_private_agents = "3"
@@ -291,6 +297,7 @@ module "dcos" {
   cluster_name        = "my-open-dcos"
   ssh_public_key_file = "~/.ssh/id_rsa.pub"
   admin_ips           = ["${data.http.whatismyip.body}/32"]
+  location            = "West US"
 
   num_masters        = "1"
   num_private_agents = "3"
