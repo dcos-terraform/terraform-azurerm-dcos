@@ -40,6 +40,7 @@ variable "tags" {
 
 variable "admin_ips" {
   description = "List of CIDR admin IPs"
+  type        = "list"
 }
 
 variable "availability_zones" {
