@@ -32,11 +32,20 @@
 
 provider "azurerm" {}
 
+resource "random_id" "id" {
+  byte_length = 2
+  prefix      = "${var.cluster_name}"
+}
+
+locals {
+  cluster_name = "${var.cluster_name_random_string ? random_id.id.hex : var.cluster_name}"
+}
+
 module "dcos-infrastructure" {
   source  = "dcos-terraform/infrastructure/azurerm"
   version = "~> 0.0"
 
-  cluster_name           = "${var.cluster_name}"
+  cluster_name           = "${local.cluster_name}"
   infra_dcos_instance_os = "${var.dcos_instance_os}"
   ssh_public_key_file    = "${var.ssh_public_key_file}"
 

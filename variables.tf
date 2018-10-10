@@ -49,6 +49,11 @@ variable "availability_zones" {
   default     = []
 }
 
+variable "cluster_name_random_string" {
+  description = "Add a random string to the cluster name"
+  default     = false
+}
+
 variable "dcos_instance_os" {
   description = "Operating system to use. Instead of using your own AMI you could use a provided OS."
 
