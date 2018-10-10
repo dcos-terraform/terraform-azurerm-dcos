@@ -61,9 +61,10 @@ variable "dcos_instance_os" {
   default = "centos_7.3"
 }
 
-variable "bootstrap_gcp_image" {
+variable "bootstrap_image" {
   description = "[BOOTSTRAP] Image to be used"
-  default     = ""
+  type        = "map"
+  default     = {}
 }
 
 variable "bootstrap_os" {
@@ -86,9 +87,10 @@ variable "bootstrap_instance_type" {
   default     = "Standard_B2s"
 }
 
-variable "masters_gcp_image" {
+variable "masters_image" {
   description = "[MASTERS] Image to be used"
-  default     = ""
+  type        = "map"
+  default     = {}
 }
 
 variable "masters_os" {
@@ -106,9 +108,10 @@ variable "masters_instance_type" {
   default     = "Standard_D4s_v3"
 }
 
-variable "private_agents_gcp_image" {
+variable "private_agents_image" {
   description = "[PRIVATE AGENTS] Image to be used"
-  default     = ""
+  type        = "map"
+  default     = {}
 }
 
 variable "private_agents_os" {
@@ -131,9 +134,10 @@ variable "private_agents_instance_type" {
   default     = "Standard_D4s_v3"
 }
 
-variable "public_agents_gcp_image" {
+variable "public_agents_image" {
   description = "[PUBLIC AGENTS] Image to be used"
-  default     = ""
+  type        = "map"
+  default     = {}
 }
 
 variable "public_agents_os" {

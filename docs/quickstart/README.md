@@ -79,7 +79,7 @@ Ensure it is set:
 12345678-abcd-efgh-9876-abc123456789
 ```
 
-### Enterprise Edition
+## Enterprise Edition
 
 DC/OS Enterprise Edition also requires a valid license key provided by Mesosphere that we will pass into our `main.tf` as `dcos_license_key_contents`. For this guide we are going to use the default superuser and password to login:
 

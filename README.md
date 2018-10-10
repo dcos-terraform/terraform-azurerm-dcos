@@ -35,7 +35,7 @@ module "dcos" {
 |------|-------------|:----:|:-----:|:-----:|
 | admin_ips | List of CIDR admin IPs | list | - | yes |
 | availability_zones | Availability zones to be used | list | `<list>` | no |
-| bootstrap_gcp_image | [BOOTSTRAP] Image to be used | string | `` | no |
+| bootstrap_image | [BOOTSTRAP] Image to be used | map | `<map>` | no |
 | bootstrap_instance_type | [BOOTSTRAP] Machine type | string | `Standard_B2s` | no |
 | bootstrap_os | [BOOTSTRAP] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
 | bootstrap_private_ip | used for the private ip for the bootstrap url | string | `` | no |
@@ -143,7 +143,7 @@ module "dcos" {
 | dcos_zk_master_credentials | [Enterprise DC/OS] set the ZooKeeper master credentials (recommended) | string | `` | no |
 | dcos_zk_super_credentials | [Enterprise DC/OS] set the zk super credentials (recommended) | string | `` | no |
 | location | Azure location to be used | string | - | yes |
-| masters_gcp_image | [MASTERS] Image to be used | string | `` | no |
+| masters_image | [MASTERS] Image to be used | map | `<map>` | no |
 | masters_instance_type | [MASTERS] Machine type | string | `Standard_D4s_v3` | no |
 | masters_os | [MASTERS] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
 | masters_root_volume_size | [MASTERS] Root volume size in GB | string | `120` | no |
@@ -152,12 +152,12 @@ module "dcos" {
 | num_of_public_agents |  | string | `` | no |
 | num_private_agents | Specify the amount of private agents. These agents will provide your main resources | string | `2` | no |
 | num_public_agents | Specify the amount of public agents. These agents will host marathon-lb and edgelb | string | `1` | no |
-| private_agents_gcp_image | [PRIVATE AGENTS] Image to be used | string | `` | no |
+| private_agents_image | [PRIVATE AGENTS] Image to be used | map | `<map>` | no |
 | private_agents_instance_type | [PRIVATE AGENTS] Machine type | string | `Standard_D4s_v3` | no |
 | private_agents_os | [PRIVATE AGENTS] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
 | private_agents_root_volume_size | [PRIVATE AGENTS] Root volume size in GB | string | `120` | no |
 | private_agents_root_volume_type | [PRIVATE AGENTS] Root volume type | string | `Standard_LRS` | no |
-| public_agents_gcp_image | [PUBLIC AGENTS] Image to be used | string | `` | no |
+| public_agents_image | [PUBLIC AGENTS] Image to be used | map | `<map>` | no |
 | public_agents_instance_type | [PUBLIC AGENTS] Machine type | string | `Standard_D4s_v3` | no |
 | public_agents_os | [PUBLIC AGENTS] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
 | public_agents_root_volume_size | [PUBLIC AGENTS] Root volume size | string | `120` | no |
