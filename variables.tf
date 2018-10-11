@@ -82,7 +82,7 @@ variable "bootstrap_root_volume_type" {
   default     = "Standard_LRS"
 }
 
-variable "bootstrap_instance_type" {
+variable "bootstrap_vm_size" {
   description = "[BOOTSTRAP] Machine type"
   default     = "Standard_B2s"
 }
@@ -103,7 +103,7 @@ variable "masters_root_volume_size" {
   default     = "120"
 }
 
-variable "masters_instance_type" {
+variable "masters_vm_size" {
   description = "[MASTERS] Machine type"
   default     = "Standard_D4s_v3"
 }
@@ -129,7 +129,7 @@ variable "private_agents_root_volume_type" {
   default     = "Standard_LRS"
 }
 
-variable "private_agents_instance_type" {
+variable "private_agents_vm_size" {
   description = "[PRIVATE AGENTS] Machine type"
   default     = "Standard_D4s_v3"
 }
@@ -155,7 +155,7 @@ variable "public_agents_root_volume_type" {
   default     = "Standard_LRS"
 }
 
-variable "public_agents_instance_type" {
+variable "public_agents_vm_size" {
   description = "[PUBLIC AGENTS] Machine type"
   default     = "Standard_D4s_v3"
 }
