@@ -98,8 +98,8 @@ module "dcos-core" {
   version = "~> 0.0"
 
   # bootstrap
-  bootstrap_ip         = "${module.dcos-infrastructure.bootstrap.public_ip[0]}"
-  bootstrap_private_ip = "${module.dcos-infrastructure.bootstrap.private_ip[0]}"
+  bootstrap_ip         = "${module.dcos-infrastructure.bootstrap.public_ip}"
+  bootstrap_private_ip = "${module.dcos-infrastructure.bootstrap.private_ip}"
   bootstrap_os_user    = "${module.dcos-infrastructure.bootstrap.admin_username}"
   bootstrap_prereq-id  = "${module.dcos-infrastructure.bootstrap.prereq_id}"
 
