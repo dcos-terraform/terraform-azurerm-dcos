@@ -157,6 +157,7 @@ module "dcos" {
 | private_agents_root_volume_size | [PRIVATE AGENTS] Root volume size in GB | string | `120` | no |
 | private_agents_root_volume_type | [PRIVATE AGENTS] Root volume type | string | `Standard_LRS` | no |
 | private_agents_vm_size | [PRIVATE AGENTS] Machine type | string | `Standard_D4s_v3` | no |
+| public_agents_additional_ports | List of additional ports on public agents (in addition to 80 and 443) | string | `<list>` | no |
 | public_agents_image | [PUBLIC AGENTS] Image to be used | map | `<map>` | no |
 | public_agents_os | [PUBLIC AGENTS] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
 | public_agents_root_volume_size | [PUBLIC AGENTS] Root volume size | string | `120` | no |

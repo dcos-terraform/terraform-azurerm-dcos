@@ -72,6 +72,7 @@ module "dcos-infrastructure" {
   public_agents_dcos_instance_os = "${var.private_agents_os}"
   public_agents_disk_size        = "${var.private_agents_root_volume_size}"
   public_agents_disk_type        = "${var.private_agents_root_volume_type}"
+  public_agents_additional_ports = ["${var.public_agents_additional_ports}"]
 
   num_masters        = "${var.num_masters}"
   num_private_agents = "${var.num_private_agents}"

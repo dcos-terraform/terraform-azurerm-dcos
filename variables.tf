@@ -159,3 +159,8 @@ variable "public_agents_vm_size" {
   description = "[PUBLIC AGENTS] Machine type"
   default     = "Standard_D4s_v3"
 }
+
+variable "public_agents_additional_ports" {
+  description = "List of additional ports on public agents (in addition to 80 and 443)"
+  default     = []
+}
