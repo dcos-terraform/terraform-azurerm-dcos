@@ -375,7 +375,7 @@ Once the apply completes, you can verify that the cluster was upgraded via the D
  For instructions on how to maintain your cluster, follow the [maintenance](https://github.com/dcos-terraform/terraform-azurerm-dcos/blob/master/docs/MAINTAIN.md) documentation.
 
 # Deleting Your Cluster
-If you ever decide you would like to destroy your cluster, simply run the following command and wait for it to complete:
+If you want to destroy your cluster, then use the following command and wait for it to complete.
 
 ```bash
 terraform destroy
