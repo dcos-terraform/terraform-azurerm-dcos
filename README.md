@@ -18,6 +18,7 @@ module "dcos" {
 
   cluster_name = "mydcoscluster"
   infra_public_ssh_key_path = "~/.ssh/key.pub"
+  admin_ips = ['198.51.100.0/24']
 
   num_masters = "3"
   num_private_agentss = "2"
