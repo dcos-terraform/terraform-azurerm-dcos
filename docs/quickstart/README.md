@@ -12,7 +12,7 @@ If you’re new to Terraform and/or want to deploy DC/OS on Azure quickly and ef
 Terraform, cloud credentials, and SSH keys:
 
 ## Installing Terraform.
-If you're on a Mac environment with homebrew installed, simply run the following command:
+If you're on a Mac environment with [homebrew](https://brew.sh/) installed, simply run the following command:
 ```bash
 brew install terraform
 ```
