@@ -1,9 +1,9 @@
 # Destroy Cluster
 
-You can shutdown/destroy all resources from your environment by running this command below:
+Use the following command to shutdown/destroy all resources from your environment.
 
 ```bash
-terraform destroy -var-file cluster_profile.tfvars
+terraform destroy
 ```
 
 ## Documentation
