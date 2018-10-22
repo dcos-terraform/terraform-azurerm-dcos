@@ -41,7 +41,7 @@ module "dcos" {
 | bootstrap_private_ip | used for the private ip for the bootstrap url | string | `` | no |
 | bootstrap_root_volume_size | [BOOTSTRAP] Root volume size in GB | string | `80` | no |
 | bootstrap_root_volume_type | [BOOTSTRAP] Root volume type | string | `Standard_LRS` | no |
-| bootstrap_vm_size | [BOOTSTRAP] Machine type | string | `Standard_B2s` | no |
+| bootstrap_vm_size | [BOOTSTRAP] Azure virtual machine size | string | `Standard_B2s` | no |
 | cluster_name | Name of the DC/OS cluster | string | `dcos-example` | no |
 | cluster_name_random_string | Add a random string to the cluster name | string | `false` | no |
 | custom_dcos_download_path | insert location of dcos installer script (optional) | string | `` | no |
@@ -143,7 +143,7 @@ module "dcos" {
 | dcos_zk_agent_credentials | [Enterprise DC/OS] set the ZooKeeper agent credentials (recommended) | string | `` | no |
 | dcos_zk_master_credentials | [Enterprise DC/OS] set the ZooKeeper master credentials (recommended) | string | `` | no |
 | dcos_zk_super_credentials | [Enterprise DC/OS] set the zk super credentials (recommended) | string | `` | no |
-| location | Azure location to be used | string | - | yes |
+| location | Azure Region | string | - | yes |
 | masters_image | [MASTERS] Image to be used | map | `<map>` | no |
 | masters_os | [MASTERS] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
 | masters_root_volume_size | [MASTERS] Root volume size in GB | string | `120` | no |
@@ -158,7 +158,7 @@ module "dcos" {
 | private_agents_root_volume_size | [PRIVATE AGENTS] Root volume size in GB | string | `120` | no |
 | private_agents_root_volume_type | [PRIVATE AGENTS] Root volume type | string | `Standard_LRS` | no |
 | private_agents_vm_size | [PRIVATE AGENTS] Machine type | string | `Standard_D4s_v3` | no |
-| public_agents_additional_ports | List of additional ports on public agents (in addition to 80 and 443) | string | `<list>` | no |
+| public_agents_additional_ports | List of additional ports allowed for public access on public agents (80 and 443 open by default) | string | `<list>` | no |
 | public_agents_image | [PUBLIC AGENTS] Image to be used | map | `<map>` | no |
 | public_agents_os | [PUBLIC AGENTS] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
 | public_agents_root_volume_size | [PUBLIC AGENTS] Root volume size | string | `120` | no |

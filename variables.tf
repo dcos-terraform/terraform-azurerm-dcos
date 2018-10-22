@@ -14,7 +14,7 @@ variable "ssh_public_key_file" {
 }
 
 variable "location" {
-  description = "Azure location to be used"
+  description = "Azure Region"
 }
 
 variable "num_masters" {
@@ -83,7 +83,7 @@ variable "bootstrap_root_volume_type" {
 }
 
 variable "bootstrap_vm_size" {
-  description = "[BOOTSTRAP] Machine type"
+  description = "[BOOTSTRAP] Azure virtual machine size"
   default     = "Standard_B2s"
 }
 
@@ -161,6 +161,6 @@ variable "public_agents_vm_size" {
 }
 
 variable "public_agents_additional_ports" {
-  description = "List of additional ports on public agents (in addition to 80 and 443)"
+  description = "List of additional ports allowed for public access on public agents (80 and 443 open by default)"
   default     = []
 }
