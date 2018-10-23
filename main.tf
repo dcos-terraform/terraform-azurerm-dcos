@@ -44,7 +44,7 @@ locals {
 
 module "dcos-infrastructure" {
   source  = "dcos-terraform/infrastructure/azurerm"
-  version = "~> 0.0"
+  version = "~> 0.0.0"
 
   cluster_name           = "${local.cluster_name}"
   infra_dcos_instance_os = "${var.dcos_instance_os}"
@@ -96,7 +96,7 @@ module "dcos-infrastructure" {
 
 module "dcos-core" {
   source  = "dcos-terraform/dcos-install-remote-exec/null"
-  version = "~> 0.0"
+  version = "~> 0.1.0"
 
   # bootstrap
   bootstrap_ip         = "${module.dcos-infrastructure.bootstrap.public_ip}"
