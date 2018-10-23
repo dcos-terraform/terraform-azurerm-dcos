@@ -1,10 +1,4 @@
----
-layout: layout.pug
-excerpt: Shutdown/destroy all DC/OS resources on Azure using Terraform
-title: Destroy Cluster on Azure
-navigationTitle: Destroy Cluster
-menuWeight: 40
----
+# Destroy Cluster on Azure
 
 Use the following command to shutdown/destroy all resources from your environment.
 
