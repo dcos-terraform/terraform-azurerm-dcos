@@ -1,8 +1,8 @@
 ---
 layout: layout.pug
-excerpt: Quickstart for a DC/OS cluster on Azure using Terraform
-title: Quickstart for DC/OS on Azure
-navigationTitle: Quickstart
+excerpt: Guide for DC/OS on Azure using Terraform
+title: DC/OS on Azure Terraform
+navigationTitle: Azure Terraform
 menuWeight: 0
 ---
 
