@@ -147,7 +147,7 @@ module "dcos" {
 | masters_image | [MASTERS] Image to be used | map | `<map>` | no |
 | masters_os | [MASTERS] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
 | masters_root_volume_size | [MASTERS] Root volume size in GB | string | `120` | no |
-| masters_vm_size | [MASTERS] Machine type | string | `Standard_D4s_v3` | no |
+| masters_vm_size | [MASTERS] Azure virtual machine size | string | `Standard_D4s_v3` | no |
 | num_masters | Specify the amount of masters. For redundancy you should have at least 3 | string | `3` | no |
 | num_of_private_agents |  | string | `` | no |
 | num_of_public_agents |  | string | `` | no |
@@ -157,13 +157,13 @@ module "dcos" {
 | private_agents_os | [PRIVATE AGENTS] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
 | private_agents_root_volume_size | [PRIVATE AGENTS] Root volume size in GB | string | `120` | no |
 | private_agents_root_volume_type | [PRIVATE AGENTS] Root volume type | string | `Standard_LRS` | no |
-| private_agents_vm_size | [PRIVATE AGENTS] Machine type | string | `Standard_D4s_v3` | no |
+| private_agents_vm_size | [PRIVATE AGENTS] Azure virtual machine size | string | `Standard_D4s_v3` | no |
 | public_agents_additional_ports | List of additional ports allowed for public access on public agents (80 and 443 open by default) | string | `<list>` | no |
 | public_agents_image | [PUBLIC AGENTS] Image to be used | map | `<map>` | no |
 | public_agents_os | [PUBLIC AGENTS] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `` | no |
 | public_agents_root_volume_size | [PUBLIC AGENTS] Root volume size | string | `120` | no |
 | public_agents_root_volume_type | [PUBLIC AGENTS] Specify the root volume type. | string | `Standard_LRS` | no |
-| public_agents_vm_size | [PUBLIC AGENTS] Machine type | string | `Standard_D4s_v3` | no |
+| public_agents_vm_size | [PUBLIC AGENTS] Azure virtual machine size | string | `Standard_D4s_v3` | no |
 | ssh_public_key | SSH public key in authorized keys format (e.g. 'ssh-rsa ..') to be used with the instances. Make sure you added this key to your ssh-agent. | string | `` | no |
 | ssh_public_key_file | Path to SSH public key. This is mandatory but can be set to an empty string if you want to use ssh_public_key with the key as string. | string | - | yes |
 | tags | Add custom tags to all resources | map | `<map>` | no |

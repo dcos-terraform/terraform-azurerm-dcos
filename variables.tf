@@ -104,7 +104,7 @@ variable "masters_root_volume_size" {
 }
 
 variable "masters_vm_size" {
-  description = "[MASTERS] Machine type"
+  description = "[MASTERS] Azure virtual machine size"
   default     = "Standard_D4s_v3"
 }
 
@@ -130,7 +130,7 @@ variable "private_agents_root_volume_type" {
 }
 
 variable "private_agents_vm_size" {
-  description = "[PRIVATE AGENTS] Machine type"
+  description = "[PRIVATE AGENTS] Azure virtual machine size"
   default     = "Standard_D4s_v3"
 }
 
@@ -156,7 +156,7 @@ variable "public_agents_root_volume_type" {
 }
 
 variable "public_agents_vm_size" {
-  description = "[PUBLIC AGENTS] Machine type"
+  description = "[PUBLIC AGENTS] Azure virtual machine size"
   default     = "Standard_D4s_v3"
 }
 
