@@ -28,7 +28,7 @@ cd dcos-installer
 Run this command below to have Terraform initialized from this repository. There is **no git clone of this repo required** as Terraform performs this for you.
 
 ```
-curl -O https://raw.githubusercontent.com/dcos-terraform/terraform-azurerm-dcos/master/docs/quickstart/main.tf
+curl -O https://raw.githubusercontent.com/dcos-terraform/terraform-azurerm-dcos/master/docs/published/main.tf
 terraform init
 ```
 
@@ -153,6 +153,6 @@ module "dcos" {
 ## Documentation
 
 1. Deploying on Azure
-2. [Upgrading DC/OS](./UPGRADE.md)
-3. [Maintaining Nodes](./MAINTAIN.md)
-4. [Destroy](./DESTROY.md)
+2. [Upgrading DC/OS](./upgrade/README.md)
+3. [Maintaining Nodes](./maintain/README.md)
+4. [Destroy](./destroy/README.md)
