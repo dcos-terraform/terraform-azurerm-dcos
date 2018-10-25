@@ -25,7 +25,7 @@ variable "dcos_license_key_contents" {
 
 module "dcos" {
   source  = "dcos-terraform/dcos/azurerm"
-  version = "~> 0.0"
+  version = "~> 0.1.0"
 
   name_prefix               = "${var.name_prefix}"
   infra_public_ssh_key_path = "${var.public_ssh_key_path}"
