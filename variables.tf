@@ -43,12 +43,6 @@ variable "admin_ips" {
   type        = "list"
 }
 
-variable "availability_zones" {
-  type        = "list"
-  description = "Availability zones to be used"
-  default     = []
-}
-
 variable "cluster_name_random_string" {
   description = "Add a random string to the cluster name"
   default     = false
