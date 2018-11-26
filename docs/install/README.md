@@ -98,7 +98,8 @@ The default variables inputs are tracked in the [terraform-azurerm-dcos](https:/
 $ cat main.tf
 ...
 module "dcos" {
-  source = "dcos-terraform/dcos/azurerm"
+  source  = "dcos-terraform/dcos/azurerm"
+  version = "~> 0.1"
 
   # additional example variables in the module
   dcos_version = "1.11.5"
