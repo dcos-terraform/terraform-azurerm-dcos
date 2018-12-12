@@ -14,7 +14,7 @@ Get started with using this module by reading the documentation here: [README.md
 ```hcl
 module "dcos" {
   source  = "dcos-terraform/dcos/azurerm"
-  version = "~> 0.1"
+  version = "~> 0.1.0"
 
   cluster_name = "mydcoscluster"
   infra_public_ssh_key_path = "~/.ssh/key.pub"
