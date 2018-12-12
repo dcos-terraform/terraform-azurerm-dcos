@@ -126,6 +126,10 @@ module "dcos-infrastructure" {
   tags         = "${var.tags}"
   dcos_version = "${var.dcos_version}"
 
+  # Testing
+  dcos_exhibitor_storage_backend    = "${var.dcos_exhibitor_storage_backend}"
+  dcos_exhibitor_azure_account_name = "${var.dcos_exhibitor_azure_account_name}"
+
   providers = {
     azurerm = "azurerm"
   }
