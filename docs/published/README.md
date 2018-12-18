@@ -135,7 +135,7 @@ data "http" "whatismyip" {
 
 module "dcos" {
   source  = "dcos-terraform/dcos/azurerm"
-  version = "~> 0.1"
+  version = "~> 0.1.0"
 
   dcos_instance_os    = "coreos_1855.5.0"
   cluster_name        = "my-dcos"
@@ -240,7 +240,7 @@ data "http" "whatismyip" {
 
 module "dcos" {
   source  = "dcos-terraform/dcos/azurerm"
-  version = "~> 0.1"
+  version = "~> 0.1.0"
 
   dcos_instance_os    = "coreos_1855.5.0"
   cluster_name        = "my-dcos"
@@ -329,7 +329,7 @@ data "http" "whatismyip" {
 
 module "dcos" {
   source  = "dcos-terraform/dcos/azurerm"
-  version = "~> 0.1"
+  version = "~> 0.1.0"
 
   dcos_instance_os    = "coreos_1855.5.0"
   cluster_name        = "my-dcos"
