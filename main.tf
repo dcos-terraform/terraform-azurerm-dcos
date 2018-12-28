@@ -15,7 +15,7 @@
  *```hcl
  * module "dcos" {
  *   source  = "dcos-terraform/dcos/azurerm"
- *   version = "~> 0.1"
+ *   version = "~> 0.1.0"
  *
  *   cluster_name = "mydcoscluster"
  *   infra_public_ssh_key_path = "~/.ssh/key.pub"
@@ -85,7 +85,8 @@ locals {
 }
 
 module "dcos-infrastructure" {
-  source  = "dcos-terraform/infrastructure/azurerm"
+  #source  = "dcos-terraform/infrastructure/azurerm"
+  source  = "git::https://github.com/dcos-terraform/terraform-azurerm-infrastructure?ref=dynam-masters-poc"
   version = "~> 0.1.0"
 
   cluster_name           = "${local.cluster_name}"
@@ -126,9 +127,8 @@ module "dcos-infrastructure" {
   tags         = "${var.tags}"
   dcos_version = "${var.dcos_version}"
 
-  # Testing
-  dcos_exhibitor_storage_backend    = "${var.dcos_exhibitor_storage_backend}"
-  dcos_exhibitor_azure_account_name = "${var.dcos_exhibitor_azure_account_name}"
+  # If defining external exhibitor storage
+  azurem_storage_account_name = "${var.dcos_exhibitor_azure_account_name}"
 
   providers = {
     azurerm = "azurerm"

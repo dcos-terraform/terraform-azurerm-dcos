@@ -14,7 +14,7 @@ Get started with using this module by reading the documentation here: [README.md
 ```hcl
 module "dcos" {
   source  = "dcos-terraform/dcos/azurerm"
-  version = "~> 0.1"
+  version = "~> 0.1.0"
 
   cluster_name = "mydcoscluster"
   infra_public_ssh_key_path = "~/.ssh/key.pub"
@@ -213,6 +213,8 @@ module "dcos" {
 
 | Name | Description |
 |------|-------------|
+| azurem_storage_key | Azure Storage Account Access Keys for External Exhibitor |
+| masters-internal-loadbalancer | This is the internal load balancer address to access the DC/OS Services |
 | masters-ips | Master IP addresses |
 | masters-loadbalancer | This is the load balancer address to access the DC/OS UI |
 | public-agents-loadbalancer | This is the load balancer address to access the DC/OS public agents |
