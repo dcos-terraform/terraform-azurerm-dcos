@@ -18,7 +18,7 @@ output "public-agents-loadbalancer" {
   value       = "${module.dcos-infrastructure.lb.public-agents}"
 }
 
-output "azurem_storage_key" {
+output "azurerm_storage_key" {
   description = "Azure Storage Account Access Keys for External Exhibitor"
-  value       = "${module.dcos-infrastructure.azurem_storage_key}"
+  value       = "${module.dcos-infrastructure.azurerm_storage_key}"
 }
