@@ -85,8 +85,7 @@ locals {
 }
 
 module "dcos-infrastructure" {
-  #source  = "dcos-terraform/infrastructure/azurerm"
-  source  = "git::https://github.com/dcos-terraform/terraform-azurerm-infrastructure?ref=dynam-masters-poc"
+  source  = "dcos-terraform/infrastructure/azurerm"
   version = "~> 0.1.0"
 
   cluster_name           = "${local.cluster_name}"
