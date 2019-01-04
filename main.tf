@@ -126,6 +126,9 @@ module "dcos-infrastructure" {
   tags         = "${var.tags}"
   dcos_version = "${var.dcos_version}"
 
+  # If defining external exhibitor storage
+  azurerm_storage_account_name = "${var.dcos_exhibitor_azure_account_name}"
+
   providers = {
     azurerm = "azurerm"
   }
