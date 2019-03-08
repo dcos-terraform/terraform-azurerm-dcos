@@ -158,3 +158,8 @@ variable "public_agents_additional_ports" {
   description = "List of additional ports allowed for public access on public agents (80 and 443 open by default)"
   default     = []
 }
+
+variable "subnet_range" {
+  description = "Private IP space to be used in CIDR format"
+  default     = "172.12.0.0/16"
+}
