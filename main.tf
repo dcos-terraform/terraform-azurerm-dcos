@@ -121,6 +121,7 @@ module "dcos-infrastructure" {
   num_private_agents = "${var.num_private_agents}"
   num_public_agents  = "${var.num_public_agents}"
   admin_ips          = "${var.admin_ips}"
+  subnet_range       = "${var.subnet_range}"
 
   location     = "${var.location}"
   tags         = "${var.tags}"
