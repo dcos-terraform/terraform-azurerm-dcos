@@ -1,5 +1,4 @@
 #!/bin/bash
-set -o nounset -o errexit
 
 AWS_URL="http://169.254.169.254/latest/dynamic/instance-identity/document"
 
