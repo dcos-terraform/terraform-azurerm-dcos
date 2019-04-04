@@ -15,7 +15,7 @@
  *```hcl
  * module "dcos" {
  *   source  = "dcos-terraform/dcos/azurerm"
- *   version = "~> 0.1.0"
+ *   version = "~> 0.2.0"
  *
  *   cluster_name = "mydcoscluster"
  *   infra_public_ssh_key_path = "~/.ssh/key.pub"
@@ -86,7 +86,7 @@ locals {
 
 module "dcos-infrastructure" {
   source  = "dcos-terraform/infrastructure/azurerm"
-  version = "~> 0.1.0"
+  version = "~> 0.2.0"
 
   cluster_name           = "${local.cluster_name}"
   infra_dcos_instance_os = "${var.dcos_instance_os}"
@@ -143,7 +143,7 @@ module "dcos-infrastructure" {
 module "dcos-core" {
   source = "dcos-terraform/dcos-install-remote-exec/null"
 
-  version = "~> 0.1.0"
+  version = "~> 0.2.0"
 
   # bootstrap
   bootstrap_ip         = "${module.dcos-infrastructure.bootstrap.public_ip}"
