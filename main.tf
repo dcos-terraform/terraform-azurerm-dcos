@@ -1,16 +1,19 @@
 /**
- * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-dcos/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-dcos/job/master/)
- * # terraform azurerm dcos
+ * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/buildStatus/icon?job=dcos-terraform%2Fterraform-azurerm-dcos%2Fsupport%252F0.1.x)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-dcos/job/support%252F0.1.x/)
  *
+ * Azure DC/OS
+ * ===============
  * Convenience wrapper for Azure
  *
- * ## Deploy DC/OS on Azure using Terraform
+ * Deploy DC/OS on Azure using Terraform
+ * ---------------
  *
  * [Starting Guide](https://github.com/dcos-terraform/terraform-azurerm-dcos/blob/master/docs/published/README.md)
  *
  * Get started with using this module by reading the documentation here: [README.md](https://github.com/dcos-terraform/terraform-azurerm-dcos/tree/master/docs/README.md)
  *
- * ## Usage
+ * EXAMPLE
+ * -------
  *
  *```hcl
  * module "dcos" {
