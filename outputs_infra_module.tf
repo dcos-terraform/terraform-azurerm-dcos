@@ -69,6 +69,6 @@ output "infrastructure.vnet_name" {
 }
 
 output "infrastructure.resource_group_name" {
-  description = "Self link of created network"
+  description = "Name of the resource group"
   value       = "${module.dcos-infrastructure.resource_group_name}"
 }
