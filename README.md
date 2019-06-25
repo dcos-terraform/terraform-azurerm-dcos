@@ -220,13 +220,13 @@ module "dcos" {
 | infrastructure.bootstrap.admin\_username | Bootstrap instance OS default user |
 | infrastructure.bootstrap.private\_ip | Private IP of the bootstrap instance |
 | infrastructure.bootstrap.public\_ip | Public IP of the bootstrap instance |
-| infrastructure.masters.admin\_username | Master instances private OS default user |
+| infrastructure.masters.admin\_username | Master instances OS default user |
 | infrastructure.masters.private\_ips | Master instances private IPs |
 | infrastructure.masters.public\_ips | Master instances public IPs |
-| infrastructure.private\_agents.admin\_username | Private Agent instances private OS default user |
+| infrastructure.private\_agents.admin\_username | Private Agent instances OS default user |
 | infrastructure.private\_agents.private\_ips | Private Agent instances private IPs |
 | infrastructure.private\_agents.public\_ips | Private Agent public IPs |
-| infrastructure.public\_agents.admin\_username | Public Agent instances private OS default user |
+| infrastructure.public\_agents.admin\_username | Public Agent instances OS default user |
 | infrastructure.public\_agents.private\_ips | Public Agent instances private IPs |
 | infrastructure.public\_agents.public\_ips | Public Agent public IPs |
 | infrastructure.resource\_group\_name | Name of the resource group |
