@@ -78,6 +78,8 @@ module "dcos" {
 | admin\_ips | List of CIDR admin IPs | list | n/a | yes |
 | location | Azure Region | string | n/a | yes |
 | ssh\_public\_key\_file | Path to SSH public key. This is mandatory but can be set to an empty string if you want to use ssh_public_key with the key as string. | string | n/a | yes |
+| additional\_private\_agent\_ips | Additional private agent IPs. | list | `<list>` | no |
+| additional\_public\_agent\_ips | Additional public agent IPs. | list | `<list>` | no |
 | ansible\_additional\_config | Add additional config options to ansible. This is getting merged with generated defaults. Do not specify `dcos:` | string | `""` | no |
 | ansible\_bundled\_container | Docker container with bundled dcos-ansible and ansible executables | string | `"mesosphere/dcos-ansible-bundle:latest"` | no |
 | bootstrap\_image | [BOOTSTRAP] Image to be used | map | `<map>` | no |
