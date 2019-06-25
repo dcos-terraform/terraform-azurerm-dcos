@@ -135,43 +135,38 @@ module "dcos-infrastructure" {
   }
 }
 
-/////////////////////////////////////////
-/////////////////////////////////////////
-/////////////////////////////////////////
-/////////////////////////////////////////
-
 module "dcos-core" {
   source = "dcos-terraform/dcos-install-remote-exec/null"
 
   version = "~> 0.2.0"
 
+  # ansible related config
+  ansible_bundled_container = "${var.ansible_bundled_container}"
+  ansible_additional_config = "${var.ansible_additional_config}"
+
   # bootstrap
   bootstrap_ip         = "${module.dcos-infrastructure.bootstrap.public_ip}"
   bootstrap_private_ip = "${module.dcos-infrastructure.bootstrap.private_ip}"
   bootstrap_os_user    = "${module.dcos-infrastructure.bootstrap.admin_username}"
-  bootstrap_prereq-id  = "${module.dcos-infrastructure.bootstrap.prereq_id}"
 
   # master
   master_ips         = ["${module.dcos-infrastructure.masters.public_ips}"]
   master_private_ips = ["${module.dcos-infrastructure.masters.private_ips}"]
   masters_os_user    = "${module.dcos-infrastructure.masters.admin_username}"
-  masters_prereq-id  = "${module.dcos-infrastructure.masters.prereq_id}"
   num_masters        = "${var.num_masters}"
 
   # private agent
-  private_agent_ips        = ["${module.dcos-infrastructure.private_agents.public_ips}"]
-  private_agents_os_user   = "${module.dcos-infrastructure.private_agents.admin_username}"
-  private_agents_prereq-id = "${module.dcos-infrastructure.private_agents.prereq_id}"
-  num_private_agents       = "${var.num_private_agents}"
+  private_agent_ips      = ["${module.dcos-infrastructure.private_agents.public_ips}"]
+  private_agents_os_user = "${module.dcos-infrastructure.private_agents.admin_username}"
+  num_private_agents     = "${var.num_private_agents}"
 
   # public agent
-  public_agent_ips        = ["${module.dcos-infrastructure.public_agents.public_ips}"]
-  public_agents_os_user   = "${module.dcos-infrastructure.public_agents.admin_username}"
-  public_agents_prereq-id = "${module.dcos-infrastructure.public_agents.prereq_id}"
-  num_public_agents       = "${var.num_public_agents}"
+  public_agent_ips      = ["${module.dcos-infrastructure.public_agents.public_ips}"]
+  public_agents_os_user = "${module.dcos-infrastructure.public_agents.admin_username}"
+  num_public_agents     = "${var.num_public_agents}"
 
   # DC/OS options
-  dcos_cluster_name                            = "${coalesce(var.dcos_cluster_name, var.cluster_name)}"
+  dcos_cluster_name                            = "${coalesce(var.dcos_cluster_name, local.cluster_name)}"
   custom_dcos_download_path                    = "${var.custom_dcos_download_path}"
   dcos_adminrouter_tls_1_0_enabled             = "${var.dcos_adminrouter_tls_1_0_enabled}"
   dcos_adminrouter_tls_1_1_enabled             = "${var.dcos_adminrouter_tls_1_1_enabled}"
@@ -224,7 +219,6 @@ module "dcos-core" {
   dcos_gpus_are_scarce                         = "${var.dcos_gpus_are_scarce}"
   dcos_http_proxy                              = "${var.dcos_http_proxy}"
   dcos_https_proxy                             = "${var.dcos_https_proxy}"
-  dcos_install_mode                            = "${var.dcos_install_mode}"
   dcos_ip_detect_contents                      = "${coalesce(var.dcos_ip_detect_contents,file("${path.module}/scripts/ip-detect.sh"))}"
   dcos_ip_detect_public_contents               = "${coalesce(var.dcos_ip_detect_public_contents,file("${path.module}/scripts/ip-detect-public.sh"))}"
   dcos_ip_detect_public_filename               = "${var.dcos_ip_detect_public_filename}"
@@ -233,8 +227,8 @@ module "dcos-core" {
   dcos_log_directory                           = "${var.dcos_log_directory}"
   dcos_master_discovery                        = "${var.dcos_master_discovery}"
   dcos_master_dns_bindall                      = "${var.dcos_master_dns_bindall}"
-  dcos_master_external_loadbalancer            = "${coalesce(var.dcos_master_external_loadbalancer,module.dcos-infrastructure.lb.masters)}"
-  dcos_master_list                             = "${var.dcos_master_list}"
+  dcos_master_external_loadbalancer            = "${coalesce(var.dcos_master_external_loadbalancer,module.dcos-infrastructure.forwarding_rules.masters)}"
+  dcos_master_list                             = ["${var.dcos_master_list}"]
   dcos_mesos_container_log_sink                = "${var.dcos_mesos_container_log_sink}"
   dcos_mesos_dns_set_truncate_bit              = "${var.dcos_mesos_dns_set_truncate_bit}"
   dcos_mesos_max_completed_tasks_per_framework = "${var.dcos_mesos_max_completed_tasks_per_framework}"
@@ -250,7 +244,7 @@ module "dcos-core" {
   dcos_previous_version_master_index           = "${var.dcos_previous_version_master_index}"
   dcos_process_timeout                         = "${var.dcos_process_timeout}"
   dcos_public_agent_list                       = "${var.dcos_public_agent_list}"
-  dcos_resolvers                               = "${var.dcos_resolvers}"
+  dcos_resolvers                               = ["${var.dcos_resolvers}"]
   dcos_rexray_config                           = "${var.dcos_rexray_config}"
   dcos_rexray_config_filename                  = "${var.dcos_rexray_config_filename}"
   dcos_rexray_config_method                    = "${var.dcos_rexray_config_method}"

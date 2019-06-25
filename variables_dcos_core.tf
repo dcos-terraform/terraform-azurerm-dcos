@@ -1,4 +1,3 @@
-# Main Variables
 variable "dcos_variant" {
   description = "Specifies which DC/OS variant it should be: `open` (Open Source) or `ee` (Enterprise Edition)"
   default     = "open"
@@ -15,26 +14,17 @@ variable "dcos_install_mode" {
 }
 
 variable "dcos_version" {
-  default     = "1.11.4"
+  default     = "1.13.1"
   description = "Specifies which DC/OS version instruction to use. Options: 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list."
 }
 
-# variable "role" {
-#   description = "specifies which dcos role of commands to run. Options: `dcos-bootstrap`, `dcos-mesos-agent-public`, `dcos-mesos-agent` and `dcos-mesos-master`"
-# }
-
-# DCOS bootstrap node variables
 variable "dcos_security" {
   default     = ""
   description = "[Enterprise DC/OS] set the security level of DC/OS, either 'strict' or 'permissive'. Default is 'permissive'. (recommended)"
 }
 
 variable "dcos_resolvers" {
-  default = <<EOF
-# YAML
- - "168.63.129.16"
-EOF
-
+  default     = ["168.63.129.16"]
   description = "A YAML nested list (-) of DNS resolvers for your DC/OS cluster nodes. (recommended)"
 }
 
@@ -471,8 +461,7 @@ variable "dcos_ip_detect_public_filename" {
 }
 
 variable "dcos_ip_detect_public_contents" {
-  default = ""
-
+  default     = ""
   description = "Allows DC/OS to be aware of your publicly routeable address for ease of use (recommended)"
 }
 

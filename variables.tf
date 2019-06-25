@@ -5,8 +5,7 @@ variable "cluster_name" {
 
 variable "ssh_public_key" {
   description = "SSH public key in authorized keys format (e.g. 'ssh-rsa ..') to be used with the instances. Make sure you added this key to your ssh-agent."
-
-  default = ""
+  default     = ""
 }
 
 variable "ssh_public_key_file" {
@@ -50,9 +49,7 @@ variable "cluster_name_random_string" {
 
 variable "dcos_instance_os" {
   description = "Operating system to use. Instead of using your own AMI you could use a provided OS."
-
-  # default     = "centos_7.4"
-  default = "centos_7.5"
+  default     = "centos_7.5"
 }
 
 variable "bootstrap_image" {
@@ -162,4 +159,14 @@ variable "public_agents_additional_ports" {
 variable "subnet_range" {
   description = "Private IP space to be used in CIDR format"
   default     = "172.12.0.0/16"
+}
+
+variable "ansible_bundled_container" {
+  default     = "mesosphere/dcos-ansible-bundle:latest"
+  description = "Docker container with bundled dcos-ansible and ansible executables"
+}
+
+variable "ansible_additional_config" {
+  default     = ""
+  description = "Add additional config options to ansible. This is getting merged with generated defaults. Do not specify `dcos:`"
 }
