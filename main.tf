@@ -136,8 +136,7 @@ module "dcos-infrastructure" {
 }
 
 module "dcos-core" {
-  source = "dcos-terraform/dcos-install-remote-exec/null"
-
+  source  = "dcos-terraform/dcos-install-remote-exec/null"
   version = "~> 0.2.0"
 
   # ansible related config
@@ -156,14 +155,16 @@ module "dcos-core" {
   num_masters        = "${var.num_masters}"
 
   # private agent
-  private_agent_ips      = ["${module.dcos-infrastructure.private_agents.public_ips}"]
-  private_agents_os_user = "${module.dcos-infrastructure.private_agents.admin_username}"
-  num_private_agents     = "${var.num_private_agents}"
+  private_agent_ips         = ["${module.dcos-infrastructure.private_agents.public_ips}"]
+  private_agent_private_ips = ["${concat(module.dcos-infrastructure.private_agents.private_ips,var.additional_private_agent_ips)}"]
+  private_agents_os_user    = "${module.dcos-infrastructure.private_agents.admin_username}"
+  num_private_agents        = "${var.num_private_agents}"
 
   # public agent
-  public_agent_ips      = ["${module.dcos-infrastructure.public_agents.public_ips}"]
-  public_agents_os_user = "${module.dcos-infrastructure.public_agents.admin_username}"
-  num_public_agents     = "${var.num_public_agents}"
+  public_agent_ips         = ["${module.dcos-infrastructure.public_agents.public_ips}"]
+  public_agent_private_ips = ["${concat(module.dcos-infrastructure.public_agents.private_ips,var.additional_public_agent_ips)}"]
+  public_agents_os_user    = "${module.dcos-infrastructure.public_agents.admin_username}"
+  num_public_agents        = "${var.num_public_agents}"
 
   # DC/OS options
   dcos_cluster_name                            = "${coalesce(var.dcos_cluster_name, local.cluster_name)}"
@@ -227,7 +228,7 @@ module "dcos-core" {
   dcos_log_directory                           = "${var.dcos_log_directory}"
   dcos_master_discovery                        = "${var.dcos_master_discovery}"
   dcos_master_dns_bindall                      = "${var.dcos_master_dns_bindall}"
-  dcos_master_external_loadbalancer            = "${coalesce(var.dcos_master_external_loadbalancer,module.dcos-infrastructure.forwarding_rules.masters)}"
+  dcos_master_external_loadbalancer            = "${coalesce(var.dcos_master_external_loadbalancer,module.dcos-infrastructure.lb.masters)}"
   dcos_master_list                             = ["${var.dcos_master_list}"]
   dcos_mesos_container_log_sink                = "${var.dcos_mesos_container_log_sink}"
   dcos_mesos_dns_set_truncate_bit              = "${var.dcos_mesos_dns_set_truncate_bit}"
