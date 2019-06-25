@@ -14,7 +14,7 @@ output "infrastructure.private_agents.admin_username" {
 }
 
 output "infrastructure.public_agents.admin_username" {
-  description = "Private Agent instances private OS default user"
+  description = "Public Agent instances private OS default user"
   value       = "${module.dcos-infrastructure.public_agents.admin_username}"
 }
 
