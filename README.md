@@ -95,7 +95,7 @@ module "dcos" {
 | dcos\_adminrouter\_tls\_1\_1\_enabled | Indicates whether to enable TLSv1.1 support in Admin Router. (optional) | string | `""` | no |
 | dcos\_adminrouter\_tls\_1\_2\_enabled | Indicates whether to enable TLSv1.2 support in Admin Router. (optional) | string | `""` | no |
 | dcos\_adminrouter\_tls\_cipher\_suite | [Enterprise DC/OS] Indicates whether to allow web browsers to send the DC/OS authentication cookie through a non-HTTPS connection. (optional) | string | `""` | no |
-| dcos\_agent\_list | used to list the agents in the config.yaml (optional) | string | `""` | no |
+| dcos\_agent\_list | used to list the agents in the config.yaml (optional) | list | `<list>` | no |
 | dcos\_audit\_logging | [Enterprise DC/OS] enable security decisions are logged for Mesos, Marathon, and Jobs. (optional) | string | `""` | no |
 | dcos\_auth\_cookie\_secure\_flag | [Enterprise DC/OS] allow web browsers to send the DC/OS authentication cookie through a non-HTTPS connection. (optional) | string | `""` | no |
 | dcos\_aws\_access\_key\_id | AWS key ID for exhibitor storage (optional but required with dcos_exhibitor_address) | string | `""` | no |
@@ -155,7 +155,7 @@ module "dcos" {
 | dcos\_master\_discovery | The Mesos master discovery method. The available options are static or master_http_loadbalancer. (recommend the use of master_http_loadbalancer) | string | `"static"` | no |
 | dcos\_master\_dns\_bindall | Indicates whether the master DNS port is open. (optional) | string | `""` | no |
 | dcos\_master\_external\_loadbalancer | Allows DC/OS to configure certs around the External Load Balancer name. If not used SSL verfication issues will arrise. EE only. (recommended) | string | `""` | no |
-| dcos\_master\_list | statically set your master nodes (not recommended but required with exhibitor_storage_backend set to static. Use aws_s3 or azure instead, that way you can replace masters in the cloud.) | string | `""` | no |
+| dcos\_master\_list | statically set your master nodes (not recommended but required with exhibitor_storage_backend set to static. Use aws_s3 or azure instead, that way you can replace masters in the cloud.) | list | `<list>` | no |
 | dcos\_mesos\_container\_log\_sink | The log manager for containers (tasks). The options are to send logs to: 'journald', 'logrotate', 'journald+logrotate'. (optional) | string | `""` | no |
 | dcos\_mesos\_dns\_set\_truncate\_bit | Indicates whether to set the truncate bit if the response is too large to fit in a single packet. (optional) | string | `""` | no |
 | dcos\_mesos\_max\_completed\_tasks\_per\_framework | The number of completed tasks for each framework that the Mesos master will retain in memory. (optional) | string | `""` | no |
@@ -170,7 +170,7 @@ module "dcos" {
 | dcos\_previous\_version | DC/OS 1.9+ requires users to set this value to ensure users know the version. Terraform helps populate this value, but users can override it here. (recommended) | string | `""` | no |
 | dcos\_previous\_version\_master\_index | Used to track the index of master for quering the previous DC/OS version during upgrading. (optional) applicable: 1.9+ | string | `"0"` | no |
 | dcos\_process\_timeout | The allowable amount of time, in seconds, for an action to begin after the process forks. (optional) | string | `""` | no |
-| dcos\_public\_agent\_list | statically set your public agents (not recommended) | string | `""` | no |
+| dcos\_public\_agent\_list | statically set your public agents (not recommended) | list | `<list>` | no |
 | dcos\_resolvers | A YAML nested list (-) of DNS resolvers for your DC/OS cluster nodes. (recommended) | list | `<list>` | no |
 | dcos\_rexray\_config | The REX-Ray configuration method for enabling external persistent volumes in Marathon. (optional) | string | `""` | no |
 | dcos\_rexray\_config\_filename | The REX-Ray configuration filename for enabling external persistent volumes in Marathon. (optional) | string | `""` | no |

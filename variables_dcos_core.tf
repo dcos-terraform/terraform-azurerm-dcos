@@ -426,12 +426,12 @@ variable "dcos_cluster_docker_credentials_enabled" {
 }
 
 variable "dcos_master_list" {
-  default     = ""
+  default     = []
   description = "statically set your master nodes (not recommended but required with exhibitor_storage_backend set to static. Use aws_s3 or azure instead, that way you can replace masters in the cloud.)"
 }
 
 variable "dcos_public_agent_list" {
-  default     = ""
+  default     = []
   description = "statically set your public agents (not recommended)"
 }
 
@@ -446,7 +446,7 @@ variable "dcos_previous_version_master_index" {
 }
 
 variable "dcos_agent_list" {
-  default     = ""
+  default     = []
   description = "used to list the agents in the config.yaml (optional)"
 }
 
