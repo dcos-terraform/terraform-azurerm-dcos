@@ -1,21 +1,21 @@
-output "infrastructure.bootstrap.os_user" {
+output "infrastructure.bootstrap.admin_username" {
   description = "Bootstrap instance OS default user"
-  value       = "${module.dcos-infrastructure.bootstrap.os_user}"
+  value       = "${module.dcos-infrastructure.bootstrap.admin_username}"
 }
 
-output "infrastructure.masters.os_user" {
+output "infrastructure.masters.admin_username" {
   description = "Master instances private OS default user"
-  value       = "${module.dcos-infrastructure.masters.os_user}"
+  value       = "${module.dcos-infrastructure.masters.admin_username}"
 }
 
-output "infrastructure.private_agents.os_user" {
+output "infrastructure.private_agents.admin_username" {
   description = "Private Agent instances private OS default user"
-  value       = "${module.dcos-infrastructure.private_agents.os_user}"
+  value       = "${module.dcos-infrastructure.private_agents.admin_username}"
 }
 
-output "infrastructure.public_agents.os_user" {
+output "infrastructure.public_agents.admin_username" {
   description = "Private Agent instances private OS default user"
-  value       = "${module.dcos-infrastructure.public_agents.os_user}"
+  value       = "${module.dcos-infrastructure.public_agents.admin_username}"
 }
 
 output "infrastructure.bootstrap.private_ip" {
