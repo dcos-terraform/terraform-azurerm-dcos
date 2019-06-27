@@ -451,7 +451,7 @@ variable "dcos_agent_list" {
 }
 
 variable "dcos_bootstrap_port" {
-  default     = "80"
+  default     = "8080"
   description = "Port of the bootstrap URL"
 }
 
