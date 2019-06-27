@@ -49,7 +49,7 @@ variable "cluster_name_random_string" {
 
 variable "dcos_instance_os" {
   description = "Operating system to use. Instead of using your own AMI you could use a provided OS."
-  default     = "centos_7.5"
+  default     = "centos_7.6"
 }
 
 variable "bootstrap_image" {
