@@ -75,7 +75,7 @@ variable "bootstrap_root_volume_type" {
 
 variable "bootstrap_vm_size" {
   description = "[BOOTSTRAP] Azure virtual machine size"
-  default     = "Standard_B2s"
+  default     = "Standard_B4ms"
 }
 
 variable "masters_image" {

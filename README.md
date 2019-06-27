@@ -87,7 +87,7 @@ module "dcos" {
 | bootstrap\_private\_ip | Private IP bootstrap nginx is listening on. Used to build the bootstrap URL. | string | `""` | no |
 | bootstrap\_root\_volume\_size | [BOOTSTRAP] Root volume size in GB | string | `"80"` | no |
 | bootstrap\_root\_volume\_type | [BOOTSTRAP] Root volume type | string | `"Standard_LRS"` | no |
-| bootstrap\_vm\_size | [BOOTSTRAP] Azure virtual machine size | string | `"Standard_B2s"` | no |
+| bootstrap\_vm\_size | [BOOTSTRAP] Azure virtual machine size | string | `"Standard_B4ms"` | no |
 | cluster\_name | Name of the DC/OS cluster | string | `"dcos-example"` | no |
 | cluster\_name\_random\_string | Add a random string to the cluster name | string | `"false"` | no |
 | custom\_dcos\_download\_path | insert location of dcos installer script (optional) | string | `""` | no |
