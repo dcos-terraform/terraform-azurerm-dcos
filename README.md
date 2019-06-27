@@ -107,7 +107,7 @@ module "dcos" {
 | dcos\_aws\_template\_storage\_region\_name | AWS CloudFormation region name (optional) | string | `""` | no |
 | dcos\_aws\_template\_storage\_secret\_access\_key | AWS secret key for the CloudFormation template (optional) | string | `""` | no |
 | dcos\_aws\_template\_upload | To automatically upload the customized advanced templates to your S3 bucket. (optional) | string | `""` | no |
-| dcos\_bootstrap\_port | Port of the bootstrap URL | string | `"80"` | no |
+| dcos\_bootstrap\_port | Port of the bootstrap URL | string | `"8080"` | no |
 | dcos\_bouncer\_expiration\_auth\_token\_days | [Enterprise DC/OS] Sets the auth token time-to-live (TTL) for Identity and Access Management. (optional) | string | `""` | no |
 | dcos\_ca\_certificate\_chain\_path | [Enterprise DC/OS] Path (relative to the $DCOS_INSTALL_DIR) to a file containing the complete CA certification chain required for end-entity certificate verification, in the OpenSSL PEM format. (optional) | string | `""` | no |
 | dcos\_ca\_certificate\_key\_path | [Enterprise DC/OS] Path (relative to the $DCOS_INSTALL_DIR) to a file containing a single X.509 certificate private key in the OpenSSL PEM format. (optional) | string | `""` | no |
@@ -145,7 +145,7 @@ module "dcos" {
 | dcos\_http\_proxy | http proxy (optional) | string | `""` | no |
 | dcos\_https\_proxy | https proxy (optional) | string | `""` | no |
 | dcos\_install\_mode | Type of command to execute. Options: install or upgrade | string | `"install"` | no |
-| dcos\_instance\_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `"centos_7.5"` | no |
+| dcos\_instance\_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `"centos_7.6"` | no |
 | dcos\_ip\_detect\_contents | Allows DC/OS to detect your private address. Use this to pass this as an input to the module rather than a file in side your bootstrap node. (recommended) | string | `""` | no |
 | dcos\_ip\_detect\_public\_contents | Allows DC/OS to be aware of your publicly routeable address for ease of use (recommended) | string | `""` | no |
 | dcos\_ip\_detect\_public\_filename | statically set your detect-ip-public path | string | `"genconf/ip-detect-public"` | no |
@@ -220,18 +220,23 @@ module "dcos" {
 |------|-------------|
 | azurerm\_storage\_key | Azure Storage Account Access Keys for External Exhibitor |
 | infrastructure.bootstrap.admin\_username | Bootstrap instance OS default user |
+| infrastructure.bootstrap.nsg\_id | Network security group id of the bootstrap instance |
 | infrastructure.bootstrap.private\_ip | Private IP of the bootstrap instance |
 | infrastructure.bootstrap.public\_ip | Public IP of the bootstrap instance |
 | infrastructure.masters.admin\_username | Master instances OS default user |
+| infrastructure.masters.nsg\_id | Network security group id of the master instances |
 | infrastructure.masters.private\_ips | Master instances private IPs |
 | infrastructure.masters.public\_ips | Master instances public IPs |
 | infrastructure.private\_agents.admin\_username | Private Agent instances OS default user |
+| infrastructure.private\_agents.nsg\_id | Network security group id of the private agent instances |
 | infrastructure.private\_agents.private\_ips | Private Agent instances private IPs |
 | infrastructure.private\_agents.public\_ips | Private Agent public IPs |
 | infrastructure.public\_agents.admin\_username | Public Agent instances OS default user |
+| infrastructure.public\_agents.nsg\_id | Network security group id of the public agent instances |
 | infrastructure.public\_agents.private\_ips | Public Agent instances private IPs |
 | infrastructure.public\_agents.public\_ips | Public Agent public IPs |
 | infrastructure.resource\_group\_name | Name of the resource group |
+| infrastructure.subnet\_id | Subnet ID of the infrastructure |
 | infrastructure.vnet\_id | ID of the VNET |
 | infrastructure.vnet\_name | Name of the VNET |
 | masters-internal-loadbalancer | This is the internal load balancer address to access the DC/OS Services |
