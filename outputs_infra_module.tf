@@ -85,7 +85,7 @@ output "infrastructure.vnet_id" {
 
 output "infrastructure.vnet_name" {
   description = "Name of the VNET"
-  value       = "${module.dcos-infrastructure.vnet_id}"
+  value       = "${module.dcos-infrastructure.vnet_name}"
 }
 
 output "infrastructure.resource_group_name" {
