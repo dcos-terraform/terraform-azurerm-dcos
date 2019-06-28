@@ -82,6 +82,7 @@ module "dcos" {
 | additional\_public\_agent\_ips | Additional public agent IPs. | list | `<list>` | no |
 | ansible\_additional\_config | Add additional config options to ansible. This is getting merged with generated defaults. Do not specify `dcos:` | string | `""` | no |
 | ansible\_bundled\_container | Docker container with bundled dcos-ansible and ansible executables | string | `"mesosphere/dcos-ansible-bundle:latest"` | no |
+| avset\_platform\_fault\_domain\_count | Availability set platform fault domain count, differs from location to location | string | `"3"` | no |
 | bootstrap\_image | [BOOTSTRAP] Image to be used | map | `<map>` | no |
 | bootstrap\_os | [BOOTSTRAP] Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `""` | no |
 | bootstrap\_private\_ip | Private IP bootstrap nginx is listening on. Used to build the bootstrap URL. | string | `""` | no |
