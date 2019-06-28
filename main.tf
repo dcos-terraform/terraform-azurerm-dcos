@@ -123,8 +123,9 @@ module "dcos-infrastructure" {
   admin_ips          = "${var.admin_ips}"
   subnet_range       = "${var.subnet_range}"
 
-  location = "${var.location}"
-  tags     = "${var.tags}"
+  location                          = "${var.location}"
+  avset_platform_fault_domain_count = "${var.avset_platform_fault_domain_count}"
+  tags                              = "${var.tags}"
 
   # If defining external exhibitor storage
   azurerm_storage_account_name = "${var.dcos_exhibitor_azure_account_name}"

@@ -16,6 +16,11 @@ variable "location" {
   description = "Azure Region"
 }
 
+variable "avset_platform_fault_domain_count" {
+  description = "Availability set platform fault domain count, differs from location to location"
+  default     = 3
+}
+
 variable "num_masters" {
   description = "Specify the amount of masters. For redundancy you should have at least 3"
   default     = 3
