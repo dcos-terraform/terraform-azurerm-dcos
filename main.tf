@@ -88,10 +88,9 @@ module "dcos-infrastructure" {
   source  = "dcos-terraform/infrastructure/azurerm"
   version = "~> 0.2.0"
 
-  cluster_name               = "${local.cluster_name}"
-  accepted_internal_networks = "${var.accepted_internal_networks}"
-  infra_dcos_instance_os     = "${var.dcos_instance_os}"
-  ssh_public_key_file        = "${var.ssh_public_key_file}"
+  cluster_name           = "${local.cluster_name}"
+  infra_dcos_instance_os = "${var.dcos_instance_os}"
+  ssh_public_key_file    = "${var.ssh_public_key_file}"
 
   bootstrap_image            = "${var.bootstrap_image}"
   bootstrap_vm_size          = "${var.bootstrap_vm_size}"

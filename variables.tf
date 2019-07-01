@@ -161,12 +161,6 @@ variable "public_agents_additional_ports" {
   default     = []
 }
 
-variable "accepted_internal_networks" {
-  description = "Subnet ranges for all internal networks"
-  type        = "list"
-  default     = []
-}
-
 variable "subnet_range" {
   description = "Private IP space to be used in CIDR format"
   default     = "172.12.0.0/16"
