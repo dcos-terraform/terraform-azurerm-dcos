@@ -137,7 +137,7 @@ module "dcos-infrastructure" {
 
 module "dcos-core" {
   source  = "dcos-terraform/dcos-install-remote-exec/null"
-  version = "~> 0.2.0"
+  version = "~> 0.2.1"
 
   # ansible related config
   ansible_bundled_container = "${var.ansible_bundled_container}"
@@ -261,6 +261,7 @@ module "dcos-core" {
   dcos_ucr_default_bridge_subnet               = "${var.dcos_ucr_default_bridge_subnet}"
   dcos_use_proxy                               = "${var.dcos_use_proxy}"
   dcos_version                                 = "${var.dcos_version}"
+  dcos_image_commit                            = "${var.dcos_image_commit}"
   dcos_zk_agent_credentials                    = "${var.dcos_zk_agent_credentials}"
   dcos_zk_master_credentials                   = "${var.dcos_zk_master_credentials}"
   dcos_zk_super_credentials                    = "${var.dcos_zk_super_credentials}"
