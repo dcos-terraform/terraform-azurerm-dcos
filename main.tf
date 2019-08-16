@@ -166,6 +166,11 @@ module "dcos-core" {
   public_agents_os_user    = "${module.dcos-infrastructure.public_agents.admin_username}"
   num_public_agents        = "${var.num_public_agents}"
 
+  # Windows private agent
+  windows_private_agent_private_ips = ["${var.additional_windows_private_agent_ips}"]
+  windows_private_agent_passwords   = ["${var.additional_windows_private_agent_passwords}"]
+  windows_private_agent_username    = "${var.additional_windows_private_agent_os_user}"
+
   # DC/OS options
   dcos_cluster_name                            = "${coalesce(var.dcos_cluster_name, local.cluster_name)}"
   custom_dcos_download_path                    = "${var.custom_dcos_download_path}"
