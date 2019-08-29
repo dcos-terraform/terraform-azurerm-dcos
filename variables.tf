@@ -176,6 +176,21 @@ variable "additional_private_agent_ips" {
   default     = []
 }
 
+variable "additional_windows_private_agent_ips" {
+  description = "Additional Windows private agent IPs"
+  default     = []
+}
+
+variable "additional_windows_private_agent_passwords" {
+  description = "Additonal Windows private agent passwords to be used for WinRM"
+  default     = []
+}
+
+variable "additional_windows_private_agent_os_user" {
+  description = "Additional Windows private agent OS user to be used for WinRM"
+  default     = "dcosadmin"
+}
+
 variable "ansible_bundled_container" {
   default     = "mesosphere/dcos-ansible-bundle:latest"
   description = "Docker container with bundled dcos-ansible and ansible executables"
