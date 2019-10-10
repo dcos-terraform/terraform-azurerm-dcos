@@ -8,14 +8,9 @@ variable "bootstrap_private_ip" {
   description = "Private IP bootstrap nginx is listening on. Used to build the bootstrap URL."
 }
 
-variable "dcos_install_mode" {
-  default     = "install"
-  description = "Type of command to execute. Options: install or upgrade"
-}
-
 variable "dcos_version" {
-  default     = "1.13.3"
-  description = "Specifies which DC/OS version instruction to use. Options: 1.13.3, 1.12.4, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list."
+  default     = "1.13.5"
+  description = "Specifies which DC/OS version instruction to use. Options: 1.13.5, 1.12.4, 1.11.11, etc. See dcos_download_path or dcos_version tree for a full list."
 }
 
 variable "dcos_security" {
