@@ -131,6 +131,8 @@ module "dcos-infrastructure" {
   # If defining external exhibitor storage
   azurerm_storage_account_name = "${var.dcos_exhibitor_azure_account_name}"
 
+  adminrouter_grpc_proxy_port = "${var.adminrouter_grpc_proxy_port}"
+
   providers = {
     azurerm = "azurerm"
   }
@@ -282,4 +284,5 @@ module "dcos-core" {
   dcos_zk_master_credentials                   = "${var.dcos_zk_master_credentials}"
   dcos_zk_super_credentials                    = "${var.dcos_zk_super_credentials}"
   dcos_enable_mesos_input_plugin               = "${var.dcos_enable_mesos_input_plugin}"
+  adminrouter_grpc_proxy_port                  = "${var.adminrouter_grpc_proxy_port}"
 }
