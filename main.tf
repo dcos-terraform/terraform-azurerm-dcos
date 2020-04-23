@@ -74,7 +74,9 @@
  *```
  */
 
-provider "azurerm" {}
+provider "azurerm" {
+  version = "~> 1.0"
+}
 
 resource "random_id" "id" {
   byte_length = 2
@@ -138,7 +140,7 @@ module "dcos-infrastructure" {
 
 module "dcos-core" {
   source  = "dcos-terraform/dcos-install-remote-exec/null"
-  version = "~> 0.2.4"
+  version = "~> 0.2.5"
 
   # ansible related config
   ansible_bundled_container = "${var.ansible_bundled_container}"
@@ -178,6 +180,8 @@ module "dcos-core" {
   # DC/OS options
   dcos_cluster_name                            = "${coalesce(var.dcos_cluster_name, local.cluster_name)}"
   custom_dcos_download_path                    = "${var.custom_dcos_download_path}"
+  custom_dcos_windows_download_path            = "${var.custom_dcos_windows_download_path}"
+  dcos_enable_windows_agents                   = "${var.dcos_enable_windows_agents}"
   dcos_calico_network_cidr                     = "${var.dcos_calico_network_cidr}"
   dcos_download_url_checksum                   = "${var.dcos_download_url_checksum}"
   dcos_adminrouter_tls_1_0_enabled             = "${var.dcos_adminrouter_tls_1_0_enabled}"
