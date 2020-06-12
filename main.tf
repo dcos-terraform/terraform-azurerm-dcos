@@ -162,19 +162,19 @@ module "dcos-core" {
 
   # private agent
   private_agent_ips = module.dcos-infrastructure.private_agents_public_ips
-  private_agent_private_ips = [concat(
+  private_agent_private_ips = concat(
     module.dcos-infrastructure.private_agents_private_ips,
     var.additional_private_agent_ips,
-  )]
+  )
   private_agents_os_user = module.dcos-infrastructure.private_agents_admin_username
   num_private_agents     = var.num_private_agents
 
   # public agent
   public_agent_ips = module.dcos-infrastructure.public_agents_public_ips
-  public_agent_private_ips = [concat(
+  public_agent_private_ips = concat(
     module.dcos-infrastructure.public_agents_private_ips,
     var.additional_public_agent_ips,
-  )]
+  )
   public_agents_os_user = module.dcos-infrastructure.public_agents_admin_username
   num_public_agents     = var.num_public_agents
 
