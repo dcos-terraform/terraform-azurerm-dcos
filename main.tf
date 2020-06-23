@@ -76,6 +76,7 @@
 
 provider "azurerm" {
   version = "~> 2.0"
+  features {}
 }
 
 resource "random_id" "id" {
