@@ -1,9 +1,9 @@
 output "masters-ips" {
   description = "Master IP addresses"
-  value = coalescelist(
+  value = try(coalescelist(
     module.dcos-infrastructure.masters_public_ips,
     module.dcos-infrastructure.masters_private_ips,
-  )
+  ), null)
 }
 
 output "masters-loadbalancer" {
